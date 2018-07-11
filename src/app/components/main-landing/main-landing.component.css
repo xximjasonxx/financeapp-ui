@@ -1,8 +1,3 @@
-/* Move down content because we have a fixed navbar that is 3.5rem tall */
-.main-landing-container {
-    padding-top: 3.5rem;
-}
-
 h3.testimonial-header {
     margin: 0;
     margin-bottom: 2em;

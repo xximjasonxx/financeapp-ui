@@ -1,0 +1,13 @@
+.content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.content-container > .column {
+    
+}
+
+.addressFields > input {
+    margin-bottom: .35em;
+}

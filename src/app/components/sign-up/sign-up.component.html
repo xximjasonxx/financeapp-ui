@@ -1,0 +1,127 @@
+<div class="container-fluid">
+  <h2>Create your Account</h2>
+  <hr />
+
+  <div class="content-container">
+    <div class="column col-md-6">
+      <form>
+        <div class="col-md-8 mb-3">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email address" value="" required>
+          <div class="invalid-feedback">
+            Valid email address is required.
+          </div>
+        </div>
+
+        <div class="col-md-8 mb-3">
+          <label for="password">Passsword</label>
+          <input type="password" class="form-control" id="email" placeholder="Enter password" value="" required>
+          <div class="invalid-feedback">
+            Valid password is required.
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="col-md-8 mb-3">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="Enter first name" value="" required>
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
+      
+        <div class="col-md-8 mb-3">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Enter last name" value="" required>
+          <div class="invalid-feedback">
+            Valid last name is required.
+          </div>
+        </div>
+
+        <div class="col-md-8 mb-3 addressFields">
+          <label for="address1">Address</label>
+          <input type="text" class="form-control" id="address1" placeholder="Enter address" value="" required>  
+          <input type="text" class="form-control" id="address1" placeholder="Apt, PO Box, Unit #" value="" required>
+          <div class="invalid-feedback">
+            Valid address is required.
+          </div>
+        </div>
+
+        <div class="col-md-8 mb-3">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" placeholder="Enter city" value="" required>
+          <div class="invalid-feedback">
+            Valid city is required.
+          </div>
+        </div>
+
+        <div class="col-md-8 mb-3">
+          <label for="state">State</label>
+          <select id="state" class="form-control">
+            <option value="">Select a state</option>
+            <option *ngFor="let state of states" value="{{state.abbr}}">{{state.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label for="zip">Postal Code</label>
+          <input type="number" class="form-control" id="zip" placeholder="Enter postal code" maxlength="5" value="" required>
+          <div class="invalid-feedback">
+            Valid city is required.
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="col-md-8 mb-3">
+          <label for="accountName">Account name</label>
+          <input type="text" class="form-control" id="accountName" placeholder="Enter acount name" value="" required>
+          <div class="invalid-feedback">
+              Valid account name is required.
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="accountType">Account Type</label>
+          <select id="accountType" class="form-control">
+            <option value="">Select an account type</option>
+            <option value="checking">Checking</option>
+            <option value="savings">Savings</option>
+            <option value="cd">Certificate of Deposit</option>
+            <option value="market">Money Market</option>
+          </select>
+        </div>
+
+        <div class="col-md-5 mb-3">
+          <label for="startingBalance">Starting balance</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="number" class="form-control" id="startingBalance" placeholder="Enter a monetary value (whole)" value="" required>
+            <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+          </div>
+          <div class="invalid-feedback">
+              Valid account name is required.
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="col-md-3 mb-3">
+          <button type="button" class="btn btn-primary">Submit your Application</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="column col-md-4">
+      <p>
+        At Farrellsoft Bank we believe in an easy and streamlined sign up process. We dont waste time following regulations or laws, we just let you tell us how much money you
+        have and we go with that. Accounts in seconds is not just our motto, its our diffentiator!!
+      </p>
+    </div>
+  </div>
+</div>
