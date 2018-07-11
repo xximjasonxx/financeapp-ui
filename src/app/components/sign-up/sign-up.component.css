@@ -11,3 +11,12 @@
 .addressFields > input {
     margin-bottom: .35em;
 }
+
+.buttonBox {
+    display: flex;
+    align-items: center;
+}
+
+.buttonBox > button {
+    margin-right: 10px;
+}

@@ -1,28 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { statesData } from './states';
 import { SignUpService } from '../../services/sign-up.service';
+import { SignupApplication } from '../../models/SignupApplication';
 
 class State {
   constructor(readonly abbr: string, readonly name: string) { }
-}
-
-class SignupApplication {
-  emailAddress: string;
-  password: string;
-  firstName: string;
-  address1: string;
-  address2: string;
-  city: string;
-  state: string;
-  zipcode: Number;
-  accountName: string;
-  accountType: string;
-  startingBalance: Number;
-
-  constructor() {
-    this.state = "";
-    this.accountType = "";
-  }
 }
 
 @Component({
@@ -45,7 +27,9 @@ export class SignUpComponent {
   }
 
   submitApplication() {
-    debugger;
     this.isSubmitting = true;
+    this.signupServie.submitApplication(this.appData).subscribe((result) => {
+      this.isSubmitting = false;
+    });
   }
 }

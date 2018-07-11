@@ -111,8 +111,11 @@
 
         <hr />
 
-        <div class="col-md-3 mb-3">
-          <button type="button" class="btn btn-primary" (click)="submitApplication()" [disabled]="isSubmitting">Submit your Application</button>
+        <div class="col-md-4 mb-3">
+          <div class="buttonBox">
+            <button type="button" class="btn btn-primary" (click)="submitApplication()" [disabled]="isSubmitting">Submit your Application</button>
+            <fa name="spinner" animation="spin" size="2x" style="color: orange;" *ngIf="isSubmitting" ></fa>
+          </div>
         </div>
       </form>
     </div>
