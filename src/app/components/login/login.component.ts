@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserLoginRequest } from '../../models/UserLoginRequest';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { ContextService } from '../../services/context.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent {
 
   constructor(
     private userService: UserService,
+    private contextService: ContextService,
     private router: Router
   ) {
     this.request = new UserLoginRequest();
@@ -22,8 +24,9 @@ export class LoginComponent {
   login(): void {
     this.isBusy = true;
     this.userService.login(this.request)
-      .then(() => {
+      .then((userInfo) => {
         this.isBusy = false;
+        this.contextService.setUserInfo(userInfo),
         this.router.navigate(['/accounts']);
       })
       .catch((error) => {

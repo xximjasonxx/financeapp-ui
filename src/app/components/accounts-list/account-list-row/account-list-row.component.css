@@ -1,0 +1,32 @@
+
+.row-container {
+    display: flex;
+
+    border: 1px solid gray;
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+    .row-container:hover {
+        background-color: #dddddd;
+        cursor: pointer;
+    }
+
+    .row-container .left-side {
+        flex-grow: 1;
+    }
+
+    .row-container .right-side {
+        flex-grow: 0;
+        text-align: right;
+    }
+
+        .row-container .right-side h6.status-text {
+            font-weight: bold;
+            font-size: .85em;
+        }
+
+/* text color styles */
+.greenColor { color: green; }
+.redColor { color: red; }
+.orangeColor { color: orange;}

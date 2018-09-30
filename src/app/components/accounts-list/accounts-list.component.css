@@ -1,0 +1,52 @@
+.content-container {
+    padding-left: 20px;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.busy-indicator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.content-container h2 {
+    border-bottom: 1px solid black;
+
+    display: flex;
+    align-items: center;
+}
+
+    h2 div {
+        flex-grow: 1;
+    }
+
+    h2 a.link-button {
+        font-size: 0.5em;
+        flex-grow: 0;
+    }
+
+    a.link-button {
+        cursor: pointer;
+        color: darkblue;
+    }
+
+.list-container {
+    margin-top: 15px;
+}
+
+.aggregate-container {
+    margin-left: 40px;
+    margin-top: 40px;
+    text-align: center;
+}

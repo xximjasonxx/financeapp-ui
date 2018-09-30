@@ -1,0 +1,18 @@
+
+<div class="content-container col-md-8" *ngIf="!isLoading">
+  <div class="header">
+    <div class="left-side">
+      <h2>{{ accountInfo.accountName }}</h2>
+      <h6>{{ accountInfo.accountType }}</h6>
+    </div>
+    <div class="right-side">
+      <h6>Current Balance</h6>
+      <h3>{{ accountInfo.currentBalance | currency }}</h3>
+    </div>
+  </div>
+  <no-transactions *ngIf="!hasTransactions"></no-transactions>
+</div>
+
+<div class="busy-indicator-container" *ngIf="isLoading">
+  <fa name="spinner" animation="spin" size="5x" style="color: orange;" ></fa>
+</div>

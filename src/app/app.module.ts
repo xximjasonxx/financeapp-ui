@@ -11,12 +11,18 @@ import { MainLandingComponent } from './components/main-landing/main-landing.com
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AccountsListComponent } from './components/accounts-list/accounts-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { AccountListRowComponent } from './components/accounts-list/account-list-row/account-list-row.component';
+import { NewAccountDialogComponent } from './components/accounts-list/new-account-dialog/new-account-dialog.component';
+import { AccountDetailComponent } from './components/accounts-list/account-detail/account-detail.component';
+import { TransactionRowComponent } from './components/transaction-row/transaction-row.component';
+import { NoTransactionsComponent } from './components/no-transactions/no-transactions.component';
 
 const appRoutes: Routes =[
   { path: 'signup', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: MainLandingComponent },
   { path: 'accounts', component: AccountsListComponent },
+  { path: 'account/:accountId', component: AccountDetailComponent },
 
   { path: '**', redirectTo: '/home' }
 ]
@@ -27,7 +33,12 @@ const appRoutes: Routes =[
     MainLandingComponent,
     SignUpComponent,
     AccountsListComponent,
-    LoginComponent
+    LoginComponent,
+    AccountListRowComponent,
+    NewAccountDialogComponent,
+    AccountDetailComponent,
+    TransactionRowComponent,
+    NoTransactionsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +50,9 @@ const appRoutes: Routes =[
     FormsModule,
     AngularFontAwesomeModule,
     HttpClientModule
+  ],
+  entryComponents: [
+    NewAccountDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
