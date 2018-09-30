@@ -6,6 +6,7 @@ import { AccountInfo } from '../../../models/AccountInfo';
 import { TransactionInfo } from '../../../models/TransactionInfo';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DepositDialogComponent } from '../../deposit-dialog/deposit-dialog.component';
+import { PaymentDialogComponent } from '../../payment-dialog/payment-dialog.component';
 
 @Component({
   selector: 'app-account-detail',
@@ -40,11 +41,20 @@ export class AccountDetailComponent implements OnInit {
     
     modalInstance.result
       .then((result) => {
+        if (result !== null)
+          this.refreshList();
+      });
+  }
 
-      })
-      .catch((error) => {
-        alert(error.message);
-      })
+  makePayment(): void {
+    var modalInstance = this.modalService.open(PaymentDialogComponent);
+    modalInstance.componentInstance.setTargetAccount(this.accountInfo.accountId);
+
+    modalInstance.result
+      .then((result) => {
+        if (result !== null)
+          this.refreshList();
+      });
   }
 
   refreshList(): void {
