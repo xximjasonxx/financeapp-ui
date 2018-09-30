@@ -9,7 +9,9 @@
     </h2>
 
     <div class="list-container">
-      <account-list-row *ngFor="let account of accountList" [accountInfo]="account"></account-list-row>
+      <account-list-row *ngFor="let account of accountList" [accountInfo]="account"
+        role="button" (click)="selectAccount(account)">
+      </account-list-row>
     </div>
     <div class="refresh-container">
       <a (click)="refreshAccountList()" class="link-button">

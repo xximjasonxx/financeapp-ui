@@ -3,6 +3,7 @@ import { AccountsService } from '../../services/accounts.service';
 import { AccountInfo } from '../../models/AccountInfo';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NewAccountDialogComponent } from './new-account-dialog/new-account-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accounts-list',
@@ -16,7 +17,8 @@ export class AccountsListComponent implements OnInit {
 
   constructor(
     private accountsService: AccountsService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) {
     this.accountList = [];
     this.updateTotalBalance();
@@ -27,7 +29,7 @@ export class AccountsListComponent implements OnInit {
   }
 
   loadAccountList(): void {
-    this.isLoading = true;
+    /*this.isLoading = true;
     this.accountsService.getAccounts()
       .then((accounts) => {
         this.accountList = accounts;
@@ -38,9 +40,9 @@ export class AccountsListComponent implements OnInit {
         this.isLoading = false;
         this.updateTotalBalance();
         alert(error.message);
-      });
+      });*/
 
-      /*this.accountList = [
+      this.accountList = [
         {
             "accountId": "ad419bbb-eafa-4442-9964-25dede328d55",
             "accountName": "Main Checking",
@@ -65,7 +67,7 @@ export class AccountsListComponent implements OnInit {
             "status": "Open",
             "accountType": "savings"
         }
-    ];*/
+    ];
   }
 
   addAccount(): void {
@@ -81,6 +83,10 @@ export class AccountsListComponent implements OnInit {
   refreshAccountList(): void {
     this.accountList = [];
     this.loadAccountList();
+  }
+
+  selectAccount(account: AccountInfo): void {
+    this.router.navigate(['/account', account.accountId]);
   }
 
   updateTotalBalance() {

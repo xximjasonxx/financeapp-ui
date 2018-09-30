@@ -13,12 +13,14 @@ import { AccountsListComponent } from './components/accounts-list/accounts-list.
 import { LoginComponent } from './components/login/login.component';
 import { AccountListRowComponent } from './components/accounts-list/account-list-row/account-list-row.component';
 import { NewAccountDialogComponent } from './components/accounts-list/new-account-dialog/new-account-dialog.component';
+import { AccountDetailComponent } from './components/accounts-list/account-detail/account-detail.component';
 
 const appRoutes: Routes =[
   { path: 'signup', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: MainLandingComponent },
   { path: 'accounts', component: AccountsListComponent },
+  { path: 'account/:accountId', component: AccountDetailComponent },
 
   { path: '**', redirectTo: '/home' }
 ]
@@ -31,7 +33,8 @@ const appRoutes: Routes =[
     AccountsListComponent,
     LoginComponent,
     AccountListRowComponent,
-    NewAccountDialogComponent
+    NewAccountDialogComponent,
+    AccountDetailComponent
   ],
   imports: [
     BrowserModule,
