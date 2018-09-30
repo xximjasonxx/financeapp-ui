@@ -10,6 +10,8 @@ import { DepositRequest } from '../../models/DepositRequest';
 })
 export class DepositDialogComponent {
   selectedFile: File;
+  depositSource: string;
+
   selectedAccount: string;
   isBusy: boolean;
 
@@ -61,6 +63,7 @@ export class DepositDialogComponent {
     var request = new DepositRequest();
     request.DepositImage = base64File;
     request.TargetAccount = this.selectedAccount;
+    request.Source = this.depositSource;
 
     return this.transactionService.submitDeposit(request);
   }

@@ -11,6 +11,10 @@
       </div>
     </div>
     <no-transactions *ngIf="!hasTransactions"></no-transactions>
+
+    <div *ngIf="hasTransactions">
+      <transaction-row *ngFor="let transaction of transactions" [transactionInfo]="transaction"></transaction-row>
+    </div>
   </div>
 
   <div class="command-container col-md-2">
@@ -23,7 +27,7 @@
       <fa name="money"></fa>
       Pay a Bill
     </a>
-    <a (click)="refreshAccountList()" class="command-link">
+    <a (click)="refreshList()" class="command-link">
       <fa name="refresh"></fa>
       Refresh List
     </a>

@@ -31,6 +31,28 @@ export class AccountDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadTransactionList();
+  }
+
+  makeDeposit(): void {
+    var modalInstance = this.modalService.open(DepositDialogComponent);
+    modalInstance.componentInstance.setSelectedAccount(this.accountInfo.accountId);
+    
+    modalInstance.result
+      .then((result) => {
+
+      })
+      .catch((error) => {
+        alert(error.message);
+      })
+  }
+
+  refreshList(): void {
+    this.transactions = [];
+    this.loadTransactionList();
+  }
+
+  loadTransactionList(): void {
     this.isLoading = true;
 
     var accountId = this.activatedRoute.snapshot.params['accountId'];;
@@ -47,18 +69,5 @@ export class AccountDetailComponent implements OnInit {
       this.isLoading = false;
       alert(error.message);
     });
-  }
-
-  makeDeposit(): void {
-    var modalInstance = this.modalService.open(DepositDialogComponent);
-    modalInstance.componentInstance.setSelectedAccount(this.accountInfo.accountId);
-    
-    modalInstance.result
-      .then((result) => {
-
-      })
-      .catch((error) => {
-        alert(error.message);
-      })
   }
 }

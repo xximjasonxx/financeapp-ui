@@ -1,0 +1,26 @@
+.row-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-top: 20px;
+
+    border: 1px solid gray;
+}
+
+    .row-container h6 {font-size: 0.8em; }
+    .row-container .left-side {
+        flex-grow: 1;
+    }
+
+        .row-container h6, .row-container h5 { margin: 0; padding: 0; }
+
+        .row-container .left-side .transaction-type { font-size: 0.75em; }
+
+    .row-container .right-side {
+        flex-grow: 0;
+        text-align: right;
+    }
+
+.greenColor { color: green; }
+.redColor { color: #aa0000; }
+.orangeColor { color: orange; }
