@@ -1,10 +1,13 @@
 
 .row-container {
-    display: flex;
-
     border: 1px solid gray;
     padding: 7px;
     margin-bottom: 10px;
+}
+
+.top-container {
+    display: flex;
+    align-items: center;
 }
 
     .row-container:hover {
@@ -19,6 +22,7 @@
     .row-container .right-side {
         flex-grow: 0;
         text-align: right;
+        margin-right: 5px;
     }
 
         .row-container .right-side h6.status-text {

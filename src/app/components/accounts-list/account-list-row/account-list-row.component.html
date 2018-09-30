@@ -1,10 +1,12 @@
 <div class="row-container">
-  <div class="left-side">
-    <h4>{{ accountInfo.accountName }}</h4>
-    <h6>{{ accountInfo.accountType }}</h6>
-  </div>
-  <div class="right-side">
-      <h6 class="status-text" [ngClass]="{'greenColor': isOpen(), 'orangeColor': isPending(), 'redColor': isClosed()}">{{ accountInfo.status }}</h6>
-      <h5>{{ accountInfo.currentBalance | currency }}</h5>
+  <div class="top-container">
+    <div class="left-side">
+      <h4>{{ accountInfo.accountName }}</h4>
+      <h6>{{ accountInfo.accountType }}</h6>
+    </div>
+    <div class="right-side">
+        <h6 class="status-text" [ngClass]="{'greenColor': isOpen(), 'orangeColor': isPending(), 'redColor': isClosed()}">{{ accountInfo.status }}</h6>
+        <h5>{{ accountInfo.currentBalance | currency }}</h5>
+    </div>
   </div>
 </div>
