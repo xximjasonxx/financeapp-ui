@@ -50,7 +50,10 @@ export class AccountDetailComponent implements OnInit {
   }
 
   makeDeposit(): void {
-    this.modalService.open(DepositDialogComponent).result
+    var modalInstance = this.modalService.open(DepositDialogComponent);
+    modalInstance.componentInstance.setSelectedAccount(this.accountInfo.accountId);
+    
+    modalInstance.result
       .then((result) => {
 
       })

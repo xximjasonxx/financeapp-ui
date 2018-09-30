@@ -15,11 +15,13 @@ export class AccountsService {
   ) { }
 
   createAccount(accountData: AccountApplication): Promise<string> {
-    return this.httpClient.post<string>("https://financeapp-demo.azure-api.net/account", accountData, {
+    return this.httpClient.post("https://financeapp-demo.azure-api.net/account", accountData, {
       headers: {
         "auth-key": this.contextService.getUserInfo().token
-      }
-    }).toPromise();
+      },
+      responseType: 'text'
+    }).toPromise()
+    .then((applicationId: string) => applicationId);
   }
 
   getAccounts(): Promise<Array<AccountInfo>> {
