@@ -1,20 +1,27 @@
-<div class="content-container col-md-6 mb-3" *ngIf="!isLoading">
-  <h2>
-    <div>Your Accounts</div>
-    <a (click)="addAccount()" class="link-button">
-        <fa name="plus"></fa>
-        Add Account
-    </a>
-  </h2>
+<div class="row">
+  <div class="content-container col-md-6 mb-3" *ngIf="!isLoading">
+    <h2>
+      <div>Your Accounts</div>
+      <a (click)="addAccount()" class="link-button">
+          <fa name="plus"></fa>
+          Add Account
+      </a>
+    </h2>
 
-  <div class="list-container">
-    <account-list-row *ngFor="let account of accountList" [accountInfo]="account"></account-list-row>
+    <div class="list-container">
+      <account-list-row *ngFor="let account of accountList" [accountInfo]="account"></account-list-row>
+    </div>
+    <div class="refresh-container">
+      <a (click)="refreshAccountList()" class="link-button">
+          <fa name="refresh"></fa>
+          Refresh List
+      </a>
+    </div>
   </div>
-  <div class="refresh-container">
-    <a (click)="refreshAccountList()" class="link-button">
-        <fa name="refresh"></fa>
-        Refresh List
-    </a>
+
+  <div class="aggregate-container col-md-2" *ngIf="!isLoading">
+    <h3>Total Balance</h3>
+    <h1>{{ totalBalance | currency}}</h1>
   </div>
 </div>
 

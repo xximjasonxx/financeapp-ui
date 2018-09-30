@@ -18,6 +18,9 @@
 h2 {
     margin: 0;
     padding: 0;
+}
+
+.content-container h2 {
     border-bottom: 1px solid black;
 
     display: flex;
@@ -40,4 +43,10 @@ h2 {
 
 .list-container {
     margin-top: 15px;
+}
+
+.aggregate-container {
+    margin-left: 40px;
+    margin-top: 40px;
+    text-align: center;
 }
