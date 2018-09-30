@@ -3,6 +3,7 @@ import { TransactionInfo } from '../models/TransactionInfo';
 import { HttpClient } from '@angular/common/http';
 import { ContextService } from './context.service';
 import { DepositRequest } from '../models/DepositRequest';
+import { PaymentRequest } from '../models/PaymentRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,16 @@ export class TransactionService {
 
   submitDeposit(depositRequest: DepositRequest): Promise<string> {
     return this.httpClient.post("https://financeapp-demo.azure-api.net/transaction/deposit", depositRequest, {
+      headers: {
+        "auth-key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxOTc5MmZlNS00ZjAzLTQ2MDgtODIxNC1iM2I0OWUwOTUwNjAifQ.JLMGTk_AE7dQVsNGkDIHUbYMU7hM84bf4b87bdwesdk", //this.contextService.getUserInfo().token
+      },
+      responseType: 'text'
+    }).toPromise()
+      .then((transactionId: string) => transactionId);
+  }
+
+  submitPayment(paymentRequest: PaymentRequest): Promise<string> {
+    return this.httpClient.post("https://financeapp-demo.azure-api.net/transaction/withdraw", paymentRequest, {
       headers: {
         "auth-key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxOTc5MmZlNS00ZjAzLTQ2MDgtODIxNC1iM2I0OWUwOTUwNjAifQ.JLMGTk_AE7dQVsNGkDIHUbYMU7hM84bf4b87bdwesdk", //this.contextService.getUserInfo().token
       },
