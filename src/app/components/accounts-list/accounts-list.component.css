@@ -28,11 +28,14 @@ h2 {
         flex-grow: 1;
     }
 
-    h2 a.add-account-button {
+    h2 a.link-button {
         font-size: 0.5em;
         flex-grow: 0;
+    }
 
+    a.link-button {
         cursor: pointer;
+        color: darkblue;
     }
 
 .list-container {
