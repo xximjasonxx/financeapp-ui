@@ -1,0 +1,28 @@
+<div class="content-container">
+  <div class="column col-md-6">
+    <form>
+      <div class="col-md-8 mb-3">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" [(ngModel)]="request.emailAddress" required>
+        <div class="invalid-feedback">
+          Valid email address is required.
+        </div>
+      </div>
+
+      <div class="col-md-8 mb-3">
+        <label for="password">Passsword</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" [(ngModel)]="request.password" required>
+        <div class="invalid-feedback">
+          Valid password is required.
+        </div>
+      </div>
+
+      <div class="col-md-8 mb-3">
+        <div class="buttonBox">
+          <button type="button" class="btn btn-primary" (click)="login()" [disabled]="isBusy">Login</button>
+          <fa name="spinner" animation="spin" size="2x" style="color: orange;" *ngIf="isBusy" ></fa>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
