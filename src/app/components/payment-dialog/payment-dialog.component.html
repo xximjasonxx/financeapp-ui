@@ -20,9 +20,6 @@
                 <span class="input-group-text">$</span>
               </div>
               <input type="number" class="form-control" id="startingBalance" name="startingBalance" placeholder="How much?" [(ngModel)]="paymentAmount" required>
-              <div class="input-group-append">
-                  <span class="input-group-text">.00</span>
-                </div>
             </div>
           </div>
         </form>
@@ -30,6 +27,6 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-primary" (click)="makeDeposit()" [disabled]="isBusy">Make Payment</button>
+    <button type="button" class="btn btn-primary" (click)="makePayment()" [disabled]="isBusy">Make Payment</button>
     <fa name="spinner" animation="spin" size="2x" style="color: orange;" *ngIf="isBusy"></fa>
   </div>

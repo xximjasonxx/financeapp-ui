@@ -33,7 +33,7 @@ export class TransactionService {
   }
 
   submitPayment(paymentRequest: PaymentRequest): Promise<string> {
-    return this.httpClient.post("https://financeapp-demo.azure-api.net/transaction/withdraw", paymentRequest, {
+    return this.httpClient.post("https://financeapp-demo.azure-api.net/transaction/payment", paymentRequest, {
       headers: {
         "auth-key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxOTc5MmZlNS00ZjAzLTQ2MDgtODIxNC1iM2I0OWUwOTUwNjAifQ.JLMGTk_AE7dQVsNGkDIHUbYMU7hM84bf4b87bdwesdk", //this.contextService.getUserInfo().token
       },
