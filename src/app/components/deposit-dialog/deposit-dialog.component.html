@@ -9,6 +9,10 @@
     <form>
       <div class="form-group">
         <form>
+          <div class="col-md-12">
+            <label for="email">Where is it coming from?</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Enter source" [(ngModel)]="depositSource" required>
+          </div>
           <div class="col-md-12 control-container">
             <label for="startingBalance">Upload an Image</label>
             <div class="input-group mb-3">

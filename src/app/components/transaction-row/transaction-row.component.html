@@ -1,3 +1,11 @@
-<p>
-  transaction-row works!
-</p>
+<div class="row-container">
+  <div class="left-side">
+    <h5>{{ transactionInfo.targetEntity }}</h5>
+    <h6>{{ transactionInfo.createdDate | amDateFormat: 'MM/DD/YYYY' }}</h6>
+    <div class="transaction-type">{{ transactionInfo.transactionType }}</div>
+  </div>
+  <div class="right-side">
+    <h5>{{ transactionInfo.amount | currency}}</h5>
+    <h6 [ngClass]="{'greenColor': isApproved(), 'orangeColor': isPending(), 'redColor': isRejected()}">{{ transactionInfo.status }}</h6>
+  </div>
+</div>
