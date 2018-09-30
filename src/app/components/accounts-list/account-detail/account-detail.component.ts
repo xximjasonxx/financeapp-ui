@@ -4,6 +4,8 @@ import { AccountsService } from '../../../services/accounts.service';
 import { TransactionService } from '../../../services/transaction.service';
 import { AccountInfo } from '../../../models/AccountInfo';
 import { TransactionInfo } from '../../../models/TransactionInfo';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DepositDialogComponent } from '../../deposit-dialog/deposit-dialog.component';
 
 @Component({
   selector: 'app-account-detail',
@@ -19,7 +21,9 @@ export class AccountDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private accountsService: AccountsService,
-    private transactionService: TransactionService
+    private transactionService: TransactionService,
+    private modalService: NgbModal
+
   ) {
     this.isLoading = false;
     this.hasTransactions = false;
@@ -43,5 +47,15 @@ export class AccountDetailComponent implements OnInit {
       this.isLoading = false;
       alert(error.message);
     });
+  }
+
+  makeDeposit(): void {
+    this.modalService.open(DepositDialogComponent).result
+      .then((result) => {
+
+      })
+      .catch((error) => {
+        alert(error.message);
+      })
   }
 }

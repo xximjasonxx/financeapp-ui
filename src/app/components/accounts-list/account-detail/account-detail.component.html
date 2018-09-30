@@ -1,16 +1,33 @@
-
-<div class="content-container col-md-8" *ngIf="!isLoading">
-  <div class="header">
-    <div class="left-side">
-      <h2>{{ accountInfo.accountName }}</h2>
-      <h6>{{ accountInfo.accountType }}</h6>
+<div class="content-container row" *ngIf="!isLoading">
+  <div class="col-md-8">
+    <div class="header">
+      <div class="left-side">
+        <h2>{{ accountInfo.accountName }}</h2>
+        <h6>{{ accountInfo.accountType }}</h6>
+      </div>
+      <div class="right-side">
+        <h6>Current Balance</h6>
+        <h3>{{ accountInfo.currentBalance | currency }}</h3>
+      </div>
     </div>
-    <div class="right-side">
-      <h6>Current Balance</h6>
-      <h3>{{ accountInfo.currentBalance | currency }}</h3>
-    </div>
+    <no-transactions *ngIf="!hasTransactions"></no-transactions>
   </div>
-  <no-transactions *ngIf="!hasTransactions"></no-transactions>
+
+  <div class="command-container col-md-2">
+    <h4>Commands</h4>
+    <a class="command-link" (click)="makeDeposit()">
+      <fa name="download"></fa>
+      Make Deposit
+    </a>
+    <a class="command-link">
+      <fa name="money"></fa>
+      Pay a Bill
+    </a>
+    <a (click)="refreshAccountList()" class="command-link">
+      <fa name="refresh"></fa>
+      Refresh List
+    </a>
+  </div>
 </div>
 
 <div class="busy-indicator-container" *ngIf="isLoading">

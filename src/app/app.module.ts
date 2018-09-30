@@ -16,6 +16,8 @@ import { NewAccountDialogComponent } from './components/accounts-list/new-accoun
 import { AccountDetailComponent } from './components/accounts-list/account-detail/account-detail.component';
 import { TransactionRowComponent } from './components/transaction-row/transaction-row.component';
 import { NoTransactionsComponent } from './components/no-transactions/no-transactions.component';
+import { DepositDialogComponent } from './components/deposit-dialog/deposit-dialog.component';
+import { PaymentDialogComponent } from './components/payment-dialog/payment-dialog.component';
 
 const appRoutes: Routes =[
   { path: 'signup', component: SignUpComponent },
@@ -38,7 +40,9 @@ const appRoutes: Routes =[
     NewAccountDialogComponent,
     AccountDetailComponent,
     TransactionRowComponent,
-    NoTransactionsComponent
+    NoTransactionsComponent,
+    DepositDialogComponent,
+    PaymentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ const appRoutes: Routes =[
     HttpClientModule
   ],
   entryComponents: [
-    NewAccountDialogComponent
+    NewAccountDialogComponent,
+    DepositDialogComponent,
+    PaymentDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

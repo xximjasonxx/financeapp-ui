@@ -35,3 +35,22 @@
         .content-container .header .right-side {
             flex-grow: 0;
         }
+
+.command-container {
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+    .command-container h4 {
+        border-bottom: 1px solid gray;
+        color: gray;
+    }
+
+    .command-link {
+        display: block;
+        font-size: 1.2em;
+        padding: 4px;
+
+        cursor: pointer;
+    }

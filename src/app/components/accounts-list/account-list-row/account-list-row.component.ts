@@ -24,4 +24,6 @@ export class AccountListRowComponent {
   isPending(): boolean {
     return this.accountInfo.statusCode == 0;
   }
+
+  startDeposit
 }
