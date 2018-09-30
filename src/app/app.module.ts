@@ -11,6 +11,7 @@ import { MainLandingComponent } from './components/main-landing/main-landing.com
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AccountsListComponent } from './components/accounts-list/accounts-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { AccountListRowComponent } from './components/accounts-list/account-list-row/account-list-row.component';
 
 const appRoutes: Routes =[
   { path: 'signup', component: SignUpComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes =[
     MainLandingComponent,
     SignUpComponent,
     AccountsListComponent,
-    LoginComponent
+    LoginComponent,
+    AccountListRowComponent
   ],
   imports: [
     BrowserModule,

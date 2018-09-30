@@ -1,3 +1,11 @@
-<p>
-  accounts-list works!
-</p>
+<div class="content-container col-md-6 mb-3" *ngIf="!isLoading">
+  <h2>Your Accounts</h2>
+
+  <div class="list-container">
+    <account-list-row *ngFor="let account of accountList" [accountInfo]="account"></account-list-row>
+  </div>
+</div>
+
+<div class="busy-indicator-container" *ngIf="isLoading">
+  <fa name="spinner" animation="spin" size="5x" style="color: orange;" ></fa>
+</div>

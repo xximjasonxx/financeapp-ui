@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { AccountApplication } from '../models/AccountApplication';
 
 import { ContextService } from './context.service';
+import { AccountInfo } from '../models/AccountInfo';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,13 @@ export class AccountsService {
       headers: {
         "auth-key": this.contextService.getUserInfo().token
       }
-    })
-      .toPromise();
+    }).toPromise();
+  }
+
+  getAccounts(): Promise<Array<AccountInfo>> {
+    return this.httpClient.get<Array<AccountInfo>>("https://financeapp-demo.azure-api.net/account", {
+      headers: {
+        "auth-key": this.contextService.getUserInfo().token
+      }}).toPromise();
   }
 }
