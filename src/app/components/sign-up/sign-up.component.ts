@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { statesData } from './states';
 import { SignUpService } from '../../services/sign-up.service';
-import { SignupApplication } from '../../models/SignupApplication';
+import { AccountApplication } from '../../models/AccountApplication';
+import { UserSignupRequest } from '../../models/UserSignupRequest';
+import { Router } from '@angular/router';
 
 class State {
   constructor(readonly abbr: string, readonly name: string) { }
@@ -14,22 +16,34 @@ class State {
 })
 export class SignUpComponent {
   states: Array<State>;
-  appData: SignupApplication;
+  newAccountData: AccountApplication;
+  newUserData: UserSignupRequest;
   isSubmitting: boolean;
 
-  constructor(private signupServie: SignUpService) {
+  constructor(
+    private signupServie: SignUpService,
+    private router: Router
+  ) {
     this.states = Object.keys(statesData).map((key) => {
       return new State(key, statesData[key]);
     });
 
-    this.appData = new SignupApplication();
+    this.newAccountData = new AccountApplication();
+    this.newUserData = new UserSignupRequest();
     this.isSubmitting = false;
   }
 
-  submitApplication() {
+  executeUserSignup(): void {
     this.isSubmitting = true;
-    this.signupServie.submitApplication(this.appData).subscribe((result) => {
-      this.isSubmitting = false;
-    });
+    this.signupServie.execute(this.newUserData, this.newAccountData)
+      .then(() => {
+        // need to redirect to accounts page, user is logged in
+        this.isSubmitting = false;
+        this.router.navigate(['/accounts']);
+      })
+      .catch((error) => {
+        this.isSubmitting = false;
+        alert(error.message);
+      });
   }
 }
