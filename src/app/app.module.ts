@@ -12,6 +12,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AccountsListComponent } from './components/accounts-list/accounts-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { AccountListRowComponent } from './components/accounts-list/account-list-row/account-list-row.component';
+import { NewAccountDialogComponent } from './components/accounts-list/new-account-dialog/new-account-dialog.component';
 
 const appRoutes: Routes =[
   { path: 'signup', component: SignUpComponent },
@@ -29,7 +30,8 @@ const appRoutes: Routes =[
     SignUpComponent,
     AccountsListComponent,
     LoginComponent,
-    AccountListRowComponent
+    AccountListRowComponent,
+    NewAccountDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,9 @@ const appRoutes: Routes =[
     FormsModule,
     AngularFontAwesomeModule,
     HttpClientModule
+  ],
+  entryComponents: [
+    NewAccountDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

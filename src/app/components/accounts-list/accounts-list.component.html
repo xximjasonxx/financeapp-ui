@@ -1,5 +1,11 @@
 <div class="content-container col-md-6 mb-3" *ngIf="!isLoading">
-  <h2>Your Accounts</h2>
+  <h2>
+    <div>Your Accounts</div>
+    <a (click)="addAccount()" class="add-account-button">
+        <fa name="plus" style="color: darkblue;" ></fa>
+        Add Account
+    </a>
+  </h2>
 
   <div class="list-container">
     <account-list-row *ngFor="let account of accountList" [accountInfo]="account"></account-list-row>

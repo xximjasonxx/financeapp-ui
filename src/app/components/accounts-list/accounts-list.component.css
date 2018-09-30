@@ -19,7 +19,21 @@ h2 {
     margin: 0;
     padding: 0;
     border-bottom: 1px solid black;
+
+    display: flex;
+    align-items: center;
 }
+
+    h2 div {
+        flex-grow: 1;
+    }
+
+    h2 a.add-account-button {
+        font-size: 0.5em;
+        flex-grow: 0;
+
+        cursor: pointer;
+    }
 
 .list-container {
     margin-top: 15px;
