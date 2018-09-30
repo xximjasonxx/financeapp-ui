@@ -14,6 +14,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AccountListRowComponent } from './components/accounts-list/account-list-row/account-list-row.component';
 import { NewAccountDialogComponent } from './components/accounts-list/new-account-dialog/new-account-dialog.component';
 import { AccountDetailComponent } from './components/accounts-list/account-detail/account-detail.component';
+import { TransactionRowComponent } from './components/transaction-row/transaction-row.component';
+import { NoTransactionsComponent } from './components/no-transactions/no-transactions.component';
 
 const appRoutes: Routes =[
   { path: 'signup', component: SignUpComponent },
@@ -34,7 +36,9 @@ const appRoutes: Routes =[
     LoginComponent,
     AccountListRowComponent,
     NewAccountDialogComponent,
-    AccountDetailComponent
+    AccountDetailComponent,
+    TransactionRowComponent,
+    NoTransactionsComponent
   ],
   imports: [
     BrowserModule,

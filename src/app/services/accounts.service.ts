@@ -28,4 +28,12 @@ export class AccountsService {
         "auth-key": this.contextService.getUserInfo().token
       }}).toPromise();
   }
+
+  getAccount(accountId: string): Promise<AccountInfo> {
+    var url = "https://financeapp-demo.azure-api.net/account/" + accountId;
+    return this.httpClient.get<AccountInfo>(url, {
+      headers: {
+        "auth-key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxOTc5MmZlNS00ZjAzLTQ2MDgtODIxNC1iM2I0OWUwOTUwNjAifQ.JLMGTk_AE7dQVsNGkDIHUbYMU7hM84bf4b87bdwesdk", //this.contextService.getUserInfo().token
+      }}).toPromise();
+  }
 }

@@ -1,0 +1,37 @@
+.busy-indicator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.content-container {
+    padding-left: 20px;
+    padding-top: 20px;
+    height: 100%;
+}
+
+    .content-container h2, .content-container h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .content-container .header {
+        display: flex;
+        align-items: center;
+
+        border-bottom: 1px solid black;
+        padding-bottom: 5px;
+    }
+
+        .content-container .header .left-side {
+            flex-grow: 1;
+        }
+
+        .content-container .header .right-side {
+            flex-grow: 0;
+        }
