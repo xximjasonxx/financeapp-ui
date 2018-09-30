@@ -10,9 +10,11 @@ import { AppComponent } from './app.component';
 import { MainLandingComponent } from './components/main-landing/main-landing.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AccountsListComponent } from './components/accounts-list/accounts-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 const appRoutes: Routes =[
   { path: 'signup', component: SignUpComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: MainLandingComponent },
   { path: 'accounts', component: AccountsListComponent },
 
@@ -24,7 +26,8 @@ const appRoutes: Routes =[
     AppComponent,
     MainLandingComponent,
     SignUpComponent,
-    AccountsListComponent
+    AccountsListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
