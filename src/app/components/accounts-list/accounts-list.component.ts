@@ -29,7 +29,7 @@ export class AccountsListComponent implements OnInit {
   }
 
   loadAccountList(): void {
-    /*this.isLoading = true;
+    this.isLoading = true;
     this.accountsService.getAccounts()
       .then((accounts) => {
         this.accountList = accounts;
@@ -40,34 +40,7 @@ export class AccountsListComponent implements OnInit {
         this.isLoading = false;
         this.updateTotalBalance();
         alert(error.message);
-      });*/
-
-      this.accountList = [
-        {
-            "accountId": "ad419bbb-eafa-4442-9964-25dede328d55",
-            "accountName": "Main Checking",
-            "currentBalance": 1000,
-            "statusCode": 1,
-            "status": "Open",
-            "accountType": "checking"
-        },
-        {
-            "accountId": "1ad0aee5-e639-49a8-8585-e9805bbb58d3",
-            "accountName": "My Retirement",
-            "currentBalance": 100000,
-            "statusCode": 1,
-            "status": "Open",
-            "accountType": "market"
-        },
-        {
-            "accountId": "02aef26b-4b38-4ecd-9e23-f8fa7167dee8",
-            "accountName": "My Savings",
-            "currentBalance": 40000,
-            "statusCode": 1,
-            "status": "Open",
-            "accountType": "savings"
-        }
-    ];
+      });
   }
 
   addAccount(): void {

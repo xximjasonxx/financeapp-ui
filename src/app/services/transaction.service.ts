@@ -18,14 +18,14 @@ export class TransactionService {
     var url = "https://financeapp-demo.azure-api.net/transaction/account/" + accountId;
     return this.httpClient.get<Array<TransactionInfo>>(url, {
       headers: {
-        "auth-key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxOTc5MmZlNS00ZjAzLTQ2MDgtODIxNC1iM2I0OWUwOTUwNjAifQ.JLMGTk_AE7dQVsNGkDIHUbYMU7hM84bf4b87bdwesdk", //this.contextService.getUserInfo().token
+        "auth-key": this.contextService.getUserInfo().token
       }}).toPromise();
   }
 
   submitDeposit(depositRequest: DepositRequest): Promise<string> {
     return this.httpClient.post("https://financeapp-demo.azure-api.net/transaction/deposit", depositRequest, {
       headers: {
-        "auth-key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxOTc5MmZlNS00ZjAzLTQ2MDgtODIxNC1iM2I0OWUwOTUwNjAifQ.JLMGTk_AE7dQVsNGkDIHUbYMU7hM84bf4b87bdwesdk", //this.contextService.getUserInfo().token
+        "auth-key": this.contextService.getUserInfo().token
       },
       responseType: 'text'
     }).toPromise()
@@ -35,7 +35,7 @@ export class TransactionService {
   submitPayment(paymentRequest: PaymentRequest): Promise<string> {
     return this.httpClient.post("https://financeapp-demo.azure-api.net/transaction/payment", paymentRequest, {
       headers: {
-        "auth-key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxOTc5MmZlNS00ZjAzLTQ2MDgtODIxNC1iM2I0OWUwOTUwNjAifQ.JLMGTk_AE7dQVsNGkDIHUbYMU7hM84bf4b87bdwesdk", //this.contextService.getUserInfo().token
+        "auth-key": this.contextService.getUserInfo().token
       },
       responseType: 'text'
     }).toPromise()
